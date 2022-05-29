@@ -14,16 +14,23 @@
 
 .icon-grid {
 /* flex! */
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+
 }
 
 .show {
 /* visibilità e opacità */
+opacity: 1 !important;
 }
 
-#griglia>div {
+#griglia > div {
     /* dimensioni e margini */
+    width: 12rem;
+    margin: 0.5rem;
     background-color: #b80adbdc;
-    border: 1px solid #3889c4;
+    border: 1px solid #000000;
     border-radius: 10px;
 }
 
@@ -48,6 +55,7 @@
 
 .show {
     /* agganciare animation-name rotazione carta */
+    animation-name: rotazione-carta;
     animation-duration: .5s;
     background-color: white;
     border: 1px solid #3889c4;
@@ -98,6 +106,10 @@
     margin-top: 20px;
 }
 
+
+
+  
+
 @media (max-width: 600px) {
     .container {
         width: 400px;
@@ -134,10 +146,10 @@
 }
 
 @keyframes rotazione-carta { /* animazione quando ruota la carta */
-    from {
+    from { transform: rotate(0.3turn);
     }
-    50% {
+    50% {transform: rotate(0.6turn);
     }
-    to {
+    to {transform: rotate(1turn);
     }
 }
