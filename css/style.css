@@ -23,9 +23,10 @@ justify-content: space-around;
 .show {
 /* visibilità e opacità */
 opacity: 1 !important;
+visibility: visible;
 }
 
-#griglia > div {
+#griglia div {
     /* dimensioni e margini */
     width: 12rem;
     margin: 0.5rem;
@@ -53,18 +54,19 @@ opacity: 1 !important;
     cursor: wait;
 }
 
-.show {
+#griglia .show {
     /* agganciare animation-name rotazione carta */
     animation-name: rotazione-carta;
-    animation-duration: .5s;
-    background-color: white;
+    animation-duration: .8s;
+    background-color:white ;
     border: 1px solid #3889c4;
     border-radius: 10px;
 }
 
-.find {
+#griglia .find {
     /* agganciare animation-name indovinato */
-    animation-duration: .5s;
+    animation-name: indovinato;
+    animation-duration: .4s;
     background-color: rgba(247, 212, 16, 0.56);
     border: 1px solid #3889c4;
     border-radius: 10px;
@@ -105,10 +107,33 @@ opacity: 1 !important;
 #modal h2 {
     margin-top: 20px;
 }
+@media (max-width: 900px) {
+    .container {
+        width: 749px;
+    }
+    #griglia>div {
+        margin: 11px 11px;
+        width: 110px;
+        height: 110px;
+    }
+    .icon {
+        font-size: 90px;
+    }
+}
+@media (max-width: 750px) {
+    .container {
+        width: 599px;
+    }
+    #griglia>div {
+        margin: 10px 10px;
+        width: 100px;
+        height: 100px;
+    }
+    .icon {
+        font-size: 80px;
+    }
+}
 
-
-
-  
 
 @media (max-width: 600px) {
     .container {
@@ -116,11 +141,11 @@ opacity: 1 !important;
     }
     #griglia>div {
         margin: 5px 5px;
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
     }
     .icon {
-        font-size: 60px;
+        font-size: 70px;
     }
 }
 
@@ -139,17 +164,17 @@ opacity: 1 !important;
 }
 
 @keyframes indovinato { /* animazione quando si indovina */
-    from {
+    from { transform:rotate(180grad);
     }
-    to {
+    to { transform:rotate(360grad);
     }
 }
 
 @keyframes rotazione-carta { /* animazione quando ruota la carta */
-    from { transform: rotate(0.3turn);
+    from { transform:rotateY(1.047);
     }
-    50% {transform: rotate(0.6turn);
+    50% {transform: rotateY(2.094rad);
     }
-    to {transform: rotate(1turn);
+    to {transform: rotateY(3.142rad);
     }
 }
