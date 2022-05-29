@@ -20,13 +20,14 @@
     </div>
     <div class="container text-center">
         <input type="button" id="button" class="button" onclick=startGame() value="Ricomincia">
-        <div class="timer"></div>
+        <div><span>min <span class="timer"></span><span> sec</span> </span></div>
     </div>
 
     <div id="modal">
         <div class="content">
             <h2>Congratulazioni! Hai risolto il gioco in: </h2>
-            <p><span id="tempoTrascorso"> </span> </p>
+            <div><span>min <span id="tempoTrascorso"></span><span> sec</span> </span></div>
+            <!-- <p><span id="tempoTrascorso"> </span> </p> -->
             <p><input type="button" class="button" onclick=playAgain() value="Altra partita"></p>
         </div>
     </div>
